@@ -5,3 +5,13 @@
 tags
 node_modules
 __pycache__
+
+# Secrets -- never track these even if someone drops one in by mistake.
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+id_rsa*
+site_config.json
