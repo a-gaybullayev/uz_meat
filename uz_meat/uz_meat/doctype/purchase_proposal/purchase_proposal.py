@@ -2,6 +2,7 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
+from group_core.group_core.permissions import cancel_linked_documents
 from uz_meat.uz_meat.store_managers import STORE_MANAGERS
 
 
@@ -57,10 +58,9 @@ class PurchaseProposal(Document):
 		self.db_set("purchase_invoice", pi.name)
 
 	def on_cancel(self):
-		for fieldname, doctype in (("sales_invoice", "Sales Invoice"), ("purchase_invoice", "Purchase Invoice")):
-			name = self.get(fieldname)
-			if name and frappe.db.get_value(doctype, name, "docstatus") == 1:
-				frappe.get_doc(doctype, name).cancel()
+		cancel_linked_documents(
+			self, {"sales_invoice": "Sales Invoice", "purchase_invoice": "Purchase Invoice"}
+		)
 
 	def _make_sales_invoice(self):
 		"""MEAT GOLD's side of the deal: sells from its own warehouse to the

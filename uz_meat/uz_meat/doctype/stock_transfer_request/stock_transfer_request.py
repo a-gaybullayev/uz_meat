@@ -2,6 +2,8 @@ import frappe
 from frappe import _
 from frappe.model.document import Document
 
+from group_core.group_core.permissions import cancel_linked_documents
+
 
 class StockTransferRequest(Document):
 	def validate(self):
@@ -29,11 +31,7 @@ class StockTransferRequest(Document):
 		self.db_set("stock_entry", se.name)
 
 	def on_cancel(self):
-		if self.stock_entry:
-			se_docstatus = frappe.db.get_value("Stock Entry", self.stock_entry, "docstatus")
-			if se_docstatus == 1:
-				se = frappe.get_doc("Stock Entry", self.stock_entry)
-				se.cancel()
+		cancel_linked_documents(self, {"stock_entry": "Stock Entry"})
 
 	def _make_stock_entry(self):
 		return frappe.get_doc(

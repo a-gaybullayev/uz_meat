@@ -8,7 +8,9 @@ app_license = "mit"
 # Apps
 # ------------------
 
-# required_apps = []
+# cancel_linked_documents() (stock_transfer_request.py, purchase_proposal.py)
+# lives in group_core -- see its permissions.py.
+required_apps = ["group_core"]
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
