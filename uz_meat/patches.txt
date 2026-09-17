@@ -5,4 +5,5 @@
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
 uz_meat.patches.create_stock_transfer_workflow
+uz_meat.patches.grant_uom_read_to_store_staff
 uz_meat.patches.retire_stock_transfer_request_create

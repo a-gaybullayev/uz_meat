@@ -153,6 +153,16 @@ required_apps = ["group_core"]
 # 	}
 # }
 
+fixtures = [
+	{
+		# UOM read access for cashiers -- see
+		# patches/grant_uom_read_to_store_staff.py for why this is scoped to
+		# our own role instead of widening Sales User/Accounts User.
+		"dt": "Custom DocPerm",
+		"filters": [["parent", "=", "UOM"], ["role", "=", "UZ MEAT Store Staff"]],
+	},
+]
+
 # Scheduled Tasks
 # ---------------
 
