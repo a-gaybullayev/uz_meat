@@ -1,0 +1,26 @@
+[
+ {
+  "amend": 0,
+  "cancel": 0,
+  "create": 0,
+  "delete": 0,
+  "docstatus": 0,
+  "doctype": "Custom DocPerm",
+  "email": 0,
+  "export": 1,
+  "if_owner": 0,
+  "import": 0,
+  "modified": "2026-08-29 00:33:45.003429",
+  "name": "mfqrfhtccq",
+  "parent": "UOM",
+  "permlevel": 0,
+  "print": 0,
+  "read": 1,
+  "report": 0,
+  "role": "UZ MEAT Store Staff",
+  "select": 0,
+  "share": 0,
+  "submit": 0,
+  "write": 0
+ }
+]

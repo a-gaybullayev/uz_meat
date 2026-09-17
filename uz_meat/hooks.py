@@ -125,13 +125,13 @@ required_apps = ["group_core"]
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+permission_query_conditions = {
+	"Purchase Proposal": "uz_meat.uz_meat.permissions.get_permission_query_conditions",
+}
+
+has_permission = {
+	"Purchase Proposal": "uz_meat.uz_meat.permissions.has_permission",
+}
 
 # DocType Class
 # ---------------
@@ -153,7 +153,22 @@ required_apps = ["group_core"]
 # 	}
 # }
 
+# Roles used throughout this app's DocType permissions and its warehouse
+# transfer-approval Workflow, shipped as fixtures so a fresh site reproduces
+# them via `bench migrate` instead of relying on someone recreating them by
+# hand. The Workflow itself (states/transitions) is created by
+# patches/create_stock_transfer_workflow.py instead of a fixture, since it's
+# generated code (per-warehouse approver mapping), not hand-edited data.
 fixtures = [
+	{
+		"dt": "Role",
+		"filters": [["name", "in", [
+			"UZ MEAT Store Staff",
+			"Denov Store Manager",
+			"Boysun Store Manager",
+			"Termiz Store Manager",
+		]]],
+	},
 	{
 		# UOM read access for cashiers -- see
 		# patches/grant_uom_read_to_store_staff.py for why this is scoped to

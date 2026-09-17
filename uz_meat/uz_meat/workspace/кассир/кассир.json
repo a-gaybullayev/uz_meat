@@ -1,0 +1,70 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"hdr\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Кассир</b></span>\", \"col\": 12}}, {\"id\": \"sc1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"POS Awesome\", \"col\": 3}}, {\"id\": \"sc2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Purchase Proposal\", \"col\": 3}}, {\"id\": \"card1\", \"type\": \"card\", \"data\": {\"card_name\": \"Работа\", \"col\": 4}}, {\"id\": \"guide\", \"type\": \"paragraph\", \"data\": {\"text\": \"<details style='margin:8px 0;padding:8px 12px;border:1px solid var(--border-color);border-radius:8px;'>\\n<summary style='cursor:pointer;font-size:14px;font-weight:700;'>📖 Инструкция (нажмите)</summary>\\n<p>Ваша зона ответственности &mdash; продажи на кассе своего магазина.</p>\\n<ol>\\n<li><b>Продажи:</b> «POS Awesome» &mdash; основной экран кассира.</li>\\n<li><b>Заявка на закупку:</b> «Purchase Proposal» &mdash; если товара не хватает, создайте заявку в MEAT GOLD (подтверждает менеджер вашего магазина).</li>\\n<li>Подтверждать (Submit) заявки вы не можете &mdash; это делает менеджер вашего магазина.</li>\\n</ol>\\n</details>\", \"col\": 12}}]",
+ "creation": "2026-08-29 00:00:00",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "point-of-sale",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Кассир",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Работа",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Purchase Proposal",
+   "link_count": 0,
+   "link_to": "Purchase Proposal",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-08-29 00:00:00",
+ "modified_by": "Administrator",
+ "module": "Uz Meat",
+ "name": "Кассир",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "UZ MEAT Store Staff"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "",
+   "label": "POS Awesome",
+   "link_to": "posapp",
+   "type": "Page"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Purchase Proposal",
+   "link_to": "Purchase Proposal",
+   "type": "DocType"
+  }
+ ],
+ "title": "Кассир"
+}

@@ -24,7 +24,7 @@ class PurchaseProposal(Document):
 		self._validate_store_manager_scope()
 
 	def _validate_store_manager_scope(self):
-		"""A store's own manager (Менеджер Денау / Байсуна / Термеза) may
+		"""A store's own manager (Denov / Boysun / Termiz Store Manager) may
 		only request purchases for their own store -- not on behalf of a
 		different one. Generic UZ MEAT Store Staff, System Manager, and the
 		MEAT GOLD-side Warehouse Manager (who only edits during "На

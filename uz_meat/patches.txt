@@ -6,4 +6,7 @@
 # Patches added in this section will be executed after doctypes are migrated
 uz_meat.patches.create_stock_transfer_workflow
 uz_meat.patches.grant_uom_read_to_store_staff
+uz_meat.patches.create_purchase_proposal_workflow
 uz_meat.patches.retire_stock_transfer_request_create
+uz_meat.patches.expose_purchase_proposal_workflow_state_in_list
+uz_meat.patches.delete_purchase_proposals_report

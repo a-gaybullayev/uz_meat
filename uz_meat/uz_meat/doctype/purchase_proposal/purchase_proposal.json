@@ -197,7 +197,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Менеджер Денау",
+   "role": "Denov Store Manager",
    "share": 1,
    "write": 1
   },
@@ -208,7 +208,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Менеджер Байсуна",
+   "role": "Boysun Store Manager",
    "share": 1,
    "write": 1
   },
@@ -219,7 +219,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Менеджер Термеза",
+   "role": "Termiz Store Manager",
    "share": 1,
    "write": 1
   },
