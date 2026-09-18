@@ -27,6 +27,19 @@ import frappe
 # same reasoning as narrow_warehouse_manager_sales_invoice_access.py in
 # property_manager: unreachable anyway once create=0, since there will
 # never again be a draft for those roles to submit.
+#
+# FIXED 2026-09-18: ROLES below used to hardcode the pre-rename Russian
+# role names ("Менеджер Денау" etc.) as dict keys -- those never existed
+# anywhere in this codebase's real history (checked the pre-wipe
+# property_manager backup directly, zero hits); the real Role records
+# are fixture-shipped by uz_meat/fixtures/role.json under their English
+# names ("Denov Store Manager" etc.) from day one. This one had a guard
+# (`if not frappe.db.exists("Role", role): continue`), so it never
+# crashed -- it just silently skipped granting the real roles anything,
+# the same no-op-not-crash failure mode documented in property_manager's
+# docs/TECH_DEBT.md. WORKSPACES below is intentionally left alone: those
+# are real Workspace records (a different doctype, never renamed by
+# property_manager's v1_55) and are genuinely named in Russian.
 
 DOCTYPE = "Stock Transfer Request"
 
@@ -39,15 +52,15 @@ ROLES = {
 		read=1, write=1, create=0,
 		email=1, export=1, print=1, report=1, share=1,
 	),
-	"Менеджер Денау": dict(
+	"Denov Store Manager": dict(
 		read=1, write=1, create=0, submit=0, cancel=1, amend=1, delete=1,
 		email=1, export=1, print=1, report=1, share=1,
 	),
-	"Менеджер Байсуна": dict(
+	"Boysun Store Manager": dict(
 		read=1, write=1, create=0, submit=0, cancel=1, amend=1, delete=1,
 		email=1, export=1, print=1, report=1, share=1,
 	),
-	"Менеджер Термеза": dict(
+	"Termiz Store Manager": dict(
 		read=1, write=1, create=0, submit=0, cancel=1, amend=1, delete=1,
 		email=1, export=1, print=1, report=1, share=1,
 	),
@@ -55,7 +68,8 @@ ROLES = {
 
 # Workspaces that currently show a "Stock Transfer Request" shortcut +
 # list link -- confirmed by grepping the JSON fixtures for the store-role
-# workspaces before writing this patch.
+# workspaces before writing this patch. These are genuinely Russian
+# Workspace names (not Role names), left as-is -- see note above.
 WORKSPACES = ["Менеджер Денау", "Менеджер Байсуна", "Менеджер Термеза", "Кассир"]
 
 
